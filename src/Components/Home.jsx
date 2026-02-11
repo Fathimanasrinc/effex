@@ -35,7 +35,10 @@ export default function Home() {
           <h2 className="logo">NETFLIX</h2>
 
           <ul className="nav-links">
-          
+            <li><a href="#home">Home</a></li>
+            <li><a href="#stats">Watch Stats</a></li>
+            <li><a href="#trending">Top Shows</a></li>
+            <li><a href="#genre">Preference</a></li>
           </ul>
 
           <div className="menu">☰</div>
@@ -77,12 +80,12 @@ export default function Home() {
       </section>
 
       {/* 3. TRENDING SECTION */}
-      <section className="trending-section">
+      <section id="trending" className="trending-section">
      <Trending/>
       </section>
 
       {/* WOW SECTION */}
-      <section className="wow-section">
+      <section id="genre" className="wow-section">
         <div className="glow-bg"></div>
 
         <div className="personality-content">
