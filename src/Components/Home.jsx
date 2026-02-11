@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import bgImage from "./one.png";
+import Trending from "./Trending.jsx";
 
 export default function Home() {
   const stats = [
@@ -8,6 +9,8 @@ export default function Home() {
     { label: "Movies Watched", value: "57+" },
     { label: "Series Completed", value: "12+" },
   ];
+ 
+
 
   const categories = ["Action", "Adventure", "Biography", "Crime", "Comedy", "Documentary", "Drama"];
 
@@ -19,8 +22,8 @@ export default function Home() {
           <h2 className="logo">NETFLIX</h2>
           <ul className="nav-links">
             <li>Home</li>
-            <li>Profile</li>
-            <li>Drama</li>
+            <li>Stats</li>
+            <li>Top Shows</li>
             <li>Movie</li>
             <li>Help</li>
           </ul>
@@ -57,32 +60,7 @@ export default function Home() {
 
       {/* 3. TRENDING SECTION */}
       <section className="trending-section">
-        <div className="trends-header">
-          <div className="trend-tab active">📈 Trends Now</div>
-          <div className="trend-tab">🔥 Popular</div>
-          <div className="trend-tab">⭐ Premium</div>
-          <div className="trend-tab">＋ Recently Added</div>
-        </div>
-        <hr className="divider" />
-        
-        <div className="category-bar">
-          {categories.map((cat) => (
-            <button key={cat} className={`cat-btn ${["Action", "Crime", "Drama"].includes(cat) ? "red-bg" : ""}`}>
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="movie-list">
-          {/* Example Cards */}
-          {["Vincenzo", "Tomorrow", "Sweet Home", "Flower of Evil"].map((m, i) => (
-            <div key={i} className="movie-card">
-              <div className="poster-placeholder"></div>
-              <h4>{m}</h4>
-              <p>202{i} • ⭐ 8.{i+4}</p>
-            </div>
-          ))}
-        </div>
+     <Trending/>
       </section>
     </div>
   );
