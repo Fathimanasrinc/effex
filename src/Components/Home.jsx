@@ -35,11 +35,7 @@ export default function Home() {
           <h2 className="logo">NETFLIX</h2>
 
           <ul className="nav-links">
-            <li>Home</li>
-            <li>Stats</li>
-            <li>Top Shows</li>
-            <li>Movie</li>
-            <li>Help</li>
+          
           </ul>
 
           <div className="menu">☰</div>
