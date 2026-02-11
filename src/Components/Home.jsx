@@ -12,42 +12,71 @@ export default function Home() {
  
 
 
-  const categories = ["Action", "Adventure", "Biography", "Crime", "Comedy", "Documentary", "Drama"];
+  const categories = [
+    "Action",
+    "Adventure",
+    "Biography",
+    "Crime",
+    "Comedy",
+    "Documentary",
+    "Drama",
+  ];
 
   return (
     <div className="main-wrapper">
+
       {/* 1. HERO SECTION */}
-      <div className="home-hero" style={{ backgroundImage: `url(${bgImage})` }}>
+      <div
+        id="home"
+        className="home-hero"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
         <nav className="navbar">
           <h2 className="logo">NETFLIX</h2>
+
           <ul className="nav-links">
+<<<<<<< HEAD
             <li>Home</li>
             <li>Stats</li>
             <li>Top Shows</li>
             <li>Movie</li>
             <li>Help</li>
+=======
+            <li><a href="#home">Home</a></li>
+            <li><a href="#stats">Watch Stats</a></li>
+            <li><a href="#trending">Top Shows</a></li>
+            <li><a href="#genre">Preference</a></li>
+>>>>>>> 739fb938f344282218b1cd1ff67f68cd4ccaee53
           </ul>
+
           <div className="menu">☰</div>
         </nav>
 
         <div className="content">
-          <p className="season">Season 1 • 16 Episodes</p>
-          <h1 className="title">SAVE ME</h1>
+          <h1 className="title">MUHSINA’S NETFLIX WRAP 2026</h1>
           <p className="description">
-            Series adapted from the webcomic entitled <br />
-            <span>Out of the World</span> by writer Jo Geum-san.
+            This year was all about discovering new stories, thrilling plots,
+            and inspiring characters. Here’s a recap of everything I watched and
+            loved in 2026.
           </p>
+
           <div className="buttons">
-            <button className="watch">▶ Watch</button>
-            <button className="add">＋ Add List</button>
+            <a
+              href="https://www.netflix.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="watch">▶ Watch</button>
+            </a>
           </div>
         </div>
+
         <div className="overlay"></div>
       </div>
 
       {/* 2. WATCH STATS SECTION */}
-      <section className="stats-section">
-        <h2 className="section-title">Your Watch Stats</h2>
+      <section id="stats" className="stats-section">
+        <h2 className="section-title">WatchStates</h2>
         <div className="stats-grid">
           {stats.map((stat, index) => (
             <div key={index} className="stat-card">
@@ -59,8 +88,89 @@ export default function Home() {
       </section>
 
       {/* 3. TRENDING SECTION */}
+<<<<<<< HEAD
       <section className="trending-section">
      <Trending/>
+=======
+      <section id="trending" className="trending-section">
+        <div className="trends-header">
+          <div className="trend-tab active">📈 Top Shows</div>
+        </div>
+
+        <hr className="divider" />
+
+        <div className="category-bar">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`cat-btn ${
+                ["Action", "Crime", "Drama"].includes(cat) ? "red-bg" : ""
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div className="movie-list">
+          {["Vincenzo", "Tomorrow", "Sweet Home", "Flower of Evil"].map(
+            (m, i) => (
+              <div key={i} className="movie-card">
+                <div className="poster-placeholder"></div>
+                <h4>{m}</h4>
+                <p>202{i} • ⭐ 8.{i + 4}</p>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+
+      {/* GENRE PREFERENCE SECTION */}
+      <section id="genre" className="genre-section">
+        <div className="genre-container">
+          <h2 className="section-title">Your Genre Preferences</h2>
+
+          {[
+            { label: "Thriller", value: "40%" },
+            { label: "Drama", value: "25%" },
+            { label: "Action", value: "20%" },
+            { label: "Romance", value: "15%" },
+          ].map((genre, i) => (
+            <div key={i} className="genre-card">
+              <div className="genre-info">
+                <span className="genre-name">{genre.label}</span>
+                <span className="genre-percentage">{genre.value}</span>
+              </div>
+
+              <div className="progress-bar">
+                <div
+                  className="progress-fill"
+                  style={{ width: genre.value }}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+>>>>>>> 739fb938f344282218b1cd1ff67f68cd4ccaee53
+      </section>
+
+      {/* WOW SECTION */}
+      <section className="wow-section">
+        <div className="glow-bg"></div>
+
+        <div className="personality-content">
+          <h1 className="cinematic-title">
+            Midnight <br />
+            <span className="outline-text">Thriller</span> Addict
+          </h1>
+
+          <div className="emoji-container">
+            <span className="floating-emoji e1">🔥</span>
+            <span className="floating-emoji e2">🔪</span>
+            <span className="floating-emoji e3">🕵️</span>
+            <span className="floating-emoji e4">🍿</span>
+          </div>
+        </div>
       </section>
     </div>
   );
